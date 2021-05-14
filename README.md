@@ -36,3 +36,12 @@ At each iteration in this traversal, the inversion operation requires that we kn
 doing another two graph traversals, we can infer this from peeking into the next node along our intended path
 
 If the next `Node` in path is `==` the current `Node`'s left operand then the target is on the left and vice versa
+
+## How to run the Driver program
+
+```bash
+# first git clone
+
+# then
+mvn 
+```
