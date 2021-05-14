@@ -42,7 +42,7 @@ data class Node(
         }
     }
 
-    fun dfs(name: String): DfsResult {
+    fun dfs(name: String): TraversalResult {
 
         val stack = Stack<Node>()
         stack.push(this)
@@ -63,7 +63,7 @@ data class Node(
                     paths.add(parent)
                     parent = parentMap[parent]
                 }
-                return DfsResult(node, paths.reversed()) // important to reverse path
+                return TraversalResult(node, paths.reversed()) // important to reverse path
             } else {
                 if (node.right != null) {
                     stack.push(node.right)

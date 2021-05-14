@@ -1,4 +1,4 @@
-data class DfsResult(
+data class TraversalResult(
     val target: Node,
     val paths: List<Node>
 )
