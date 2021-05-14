@@ -26,9 +26,13 @@ fun main() {
 }
 ```
 
-## Performance Insights in `Solver.kt`
+## Description of General Algorithm
 
-In any given node of the solution we must know
+First use a DFS to find the target `Node`, as well as the sequence of
+nodes that must be traversed to get from the root `Node` to the target `Node`
 
-We can avoid the issue of repeatedly doing DFS to see if either operand contains
-the target node by just comparing `paths`# simple-solver
+We traverse this path **in order**, and invert the operation and operands on each node. 
+At each iteration in this traversal, the inversion operation requires that we know which operand `contains` our target `Node` and which operand does not. Instead of
+doing another two graph traversals, we can infer this from peeking into the next node along our intended path
+
+If the next `Node` in path is `==` the current `Node`'s left operand then the target is on the left and vice versa
