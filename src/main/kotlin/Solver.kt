@@ -16,6 +16,7 @@ class Solver {
         the operation defined on that node
          */
         paths.forEachIndexed { idx, node ->
+
             /*
             determine whether the group is on the right or on the left
             by peaking into the next node in path. If the next node is on the right
@@ -34,23 +35,13 @@ class Solver {
             val rightNode = node.right
 
             val b = when {
-                leftNode == nextNode -> {
-                    rightNode
-                }
-                rightNode == nextNode -> {
-                    leftNode
-                }
+                leftNode == nextNode -> rightNode
+                rightNode == nextNode -> leftNode
                 else -> {
                     when {
-                        leftNode == target -> {
-                            rightNode
-                        }
-                        rightNode == target -> {
-                            leftNode
-                        }
-                        else -> {
-                            error("this should never happen")
-                        }
+                        leftNode == target -> rightNode
+                        rightNode == target -> leftNode
+                        else -> error("this should never happen")
                     }
                 }
             }
