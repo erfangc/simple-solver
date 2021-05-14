@@ -43,5 +43,8 @@ If the next `Node` in path is `==` the current `Node`'s left operand then the ta
 # first git clone
 
 # then
-mvn 
+mvn package
+
+# then ...
+java -jar target/simple-solver-1.0-SNAPSHOT.jar 
 ```
